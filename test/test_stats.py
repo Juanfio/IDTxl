@@ -5,7 +5,7 @@ import copy as cp
 
 import numpy as np
 import pytest
-from test_estimators_jidt import _get_gauss_data
+# from test_estimators_jidt import _get_gauss_data
 
 from idtxl import stats
 from idtxl.active_information_storage import ActiveInformationStorage
@@ -679,6 +679,6 @@ if __name__ == "__main__":
     # test_omnibus_test()
     # test_max_statistic()
     # test_min_statistic()
-    test_max_statistic_sequential_bivariate_mi()
-    test_max_statistic_sequential_bivariate()
-    # test_max_statistic_sequential()
+    # test_max_statistic_sequential_bivariate_mi()
+    # test_max_statistic_sequential_bivariate()
+    test_max_statistic_sequential()
