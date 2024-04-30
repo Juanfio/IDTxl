@@ -665,6 +665,14 @@ def max_statistic_sequential(analysis_setup, data):
     selected_vars_order = utils.argsort_descending(individual_stat)
     individual_stat_sorted = utils.sort_descending(individual_stat)
     max_distribution = _sort_table_max(surr_table)
+    
+    ## [JP] Retrieve the surrogate table as an attribute of the MultivariateTE object.
+    print('\n\nAfter utils.argsort_descending(individual_stat) --> selected_vars_order: {}'.format(selected_vars_order))
+    print('After utils.sort_descending(individual_stat) --> individual_stat_sorted: {}'.format(individual_stat_sorted))
+    print('First 6 surrogates TE before sorting. Rows are candidates, columns are surrogates:\n{}\n\n'.format(surr_table[:,:6]))
+    print('First 6 surrogates TE after sorting. Rows are candidates, columns are surrogates:\n{}\n\n'.format(max_distribution[:,:6]))
+    analysis_setup.surr_table = surr_table
+    analysis_setup.max_distribution = max_distribution
 
     # Compare each original value with the distribution of the same rank,
     # starting with the highest value.

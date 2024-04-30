@@ -85,9 +85,9 @@ def test_max_statistic_sequential():
         [[True, True, True], [True, True, False]],
     ):
         [sign, p, te] = stats.max_statistic_sequential(analysis_setup=s, data=d)
-        print(te)
-        print(p)
         print(sign)
+        print(p)
+        print(te)
         assert len(p) == len(te)
         assert len(p) == len(sign)
         assert len(p) == len(setup.selected_vars_sources)
@@ -112,10 +112,10 @@ def test_max_statistic_sequential():
     assert len(p) == len(te)
     assert len(p) == len(sign)
     assert len(p) == len(setup.selected_vars_sources)
-    print(p)
-    print(setup.selected_vars_sources)
     print(sign)
-    print(te, "\n\n")
+    print(p)
+    print(te)
+    print(setup.selected_vars_sources, "\n\n")
 
     for permuted_var in [0, 4]:
         np.random.seed(0)

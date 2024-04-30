@@ -1158,7 +1158,9 @@ class NetworkInferenceMultivariate(NetworkInference):
                 #  max_stats_sequential, it will catch it and return
                 #  everything as not significant:
                 [s, p, stat] = stats.max_statistic_sequential(self, data)
+                print('Output max_statistic_sequential: s={}, \t p={}, \t stat={}\n\n'.format(s, p, stat))
                 p, stat = self._remove_non_significant(s, p, stat)
+                print('Output _remove_non_significant: p={}, \t stat={}'.format(p, stat))
                 self.pvalues_sign_sources = p
                 self.statistic_sign_sources = stat
                 # Calculate TE for all links in the network. Calculate local TE
