@@ -1531,7 +1531,8 @@ def _find_pvalue(statistic, distribution, alpha, tail):
     if pvalue == 0:
         pvalue = 1.0 / distribution.shape[0]
     significance = pvalue < alpha
-
+    print('Number of surrogates for normalization of pvalue: {}'.format(distribution.shape[0]))
+    print('The alpha level is: {}'.format(alpha))
     return significance, pvalue
 
 
