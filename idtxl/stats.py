@@ -1527,6 +1527,7 @@ def _find_pvalue(statistic, distribution, alpha, tail):
 
     # If the statistic is larger than all values in the test distribution, set
     # the p-value to the smallest possible value 1/n_perm.
+    print('Number of surrogates for normalization of pvalue: {}'.format(distribution.shape[0]))
     if pvalue == 0:
         pvalue = 1.0 / distribution.shape[0]
     significance = pvalue < alpha
